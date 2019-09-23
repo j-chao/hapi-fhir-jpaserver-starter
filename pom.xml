@@ -30,7 +30,7 @@
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <version>6.0.5</version>
+            <version>8.0.17</version>
         </dependency>
 
 
@@ -226,7 +226,7 @@
     <build>
 
         <!-- Tells Maven to name the generated WAR file as hapi-fhir-jpaserver.war -->
-        <finalName>hapi-fhir-jpaserver</finalName>
+        <finalName>ROOT</finalName>
 
         <plugins>
             <!-- The following is not required for the application to build, but allows you to test it by issuing "mvn jetty:run" from the command line. -->
@@ -236,7 +236,7 @@
                 <version>9.4.8.v20180619</version>
                 <configuration>
                     <webApp>
-                        <contextPath>/hapi-fhir-jpaserver</contextPath>
+                        <contextPath>/fhir/</contextPath>
                         <allowDuplicateFragmentNames>true</allowDuplicateFragmentNames>
                     </webApp>
                 </configuration>
