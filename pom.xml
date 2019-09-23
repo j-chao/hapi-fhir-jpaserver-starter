@@ -33,6 +33,7 @@
             <version>6.0.5</version>
         </dependency>
 
+
         <!-- Needed for Email subscriptions -->
         <dependency>
             <groupId>com.sun.mail</groupId>
