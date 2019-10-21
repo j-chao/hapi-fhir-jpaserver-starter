@@ -1,5 +1,5 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <!--
@@ -11,11 +11,16 @@
     <parent>
         <groupId>ca.uhn.hapi.fhir</groupId>
         <artifactId>hapi-fhir</artifactId>
-        <version>4.0.0</version>
+        <version>4.0.3</version>
     </parent>
 
     <groupId>ca.uhn.hapi.fhir</groupId>
     <artifactId>hapi-fhir-jpaserver-starter</artifactId>
+
+    <prerequisites>
+        <maven>3.5.0</maven>
+    </prerequisites>
+
     <dependencies>
         <dependency>
             <groupId>org.eclipse.jetty.websocket</groupId>
@@ -32,7 +37,6 @@
             <artifactId>mysql-connector-java</artifactId>
             <version>8.0.17</version>
         </dependency>
-
 
         <!-- Needed for Email subscriptions -->
         <dependency>
@@ -141,10 +145,10 @@
 
         <!-- This example uses H2 embedded database. If you are using another database such as Mysql or Oracle, you may omit the following dependencies and replace them with an appropriate database client
             dependency for your database platform. -->
-        <dependency>
-            <groupId>com.h2database</groupId>
-            <artifactId>h2</artifactId>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>com.h2database</groupId>-->
+<!--            <artifactId>h2</artifactId>-->
+<!--        </dependency>-->
 
         <!-- The following dependencies are only needed for automated unit tests, you do not neccesarily need them to run the example. -->
         <dependency>
@@ -176,19 +180,19 @@
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-webapp</artifactId>
             <scope>test</scope>
-			</dependency>
-			<!--
-        <dependency>
-            <groupId>com.helger</groupId>
-            <artifactId>ph-schematron</artifactId>
-            <exclusions>
-                <exclusion>
-                    <artifactId>Saxon-HE</artifactId>
-                    <groupId>net.sf.saxon</groupId>
-                </exclusion>
-            </exclusions>
         </dependency>
-			-->
+        <!--
+          <dependency>
+              <groupId>com.helger</groupId>
+              <artifactId>ph-schematron</artifactId>
+              <exclusions>
+                  <exclusion>
+                      <artifactId>Saxon-HE</artifactId>
+                      <groupId>net.sf.saxon</groupId>
+                  </exclusion>
+              </exclusions>
+          </dependency>
+        -->
 
         <!--
         For some reason JavaDoc crashed during site generation unless we have this dependency
@@ -236,7 +240,7 @@
                 <version>9.4.8.v20180619</version>
                 <configuration>
                     <webApp>
-                        <contextPath>/fhir/</contextPath>
+                        <contextPath>/</contextPath>
                         <allowDuplicateFragmentNames>true</allowDuplicateFragmentNames>
                     </webApp>
                 </configuration>

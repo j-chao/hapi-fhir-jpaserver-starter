@@ -1,5 +1,7 @@
 #!/bin/sh
 
-mvn package && \
-  docker build -t hapi-fhir/hapi-fhir-jpaserver-starter .
+mvn clean package && \
+  docker build -t jchao100/hapi-fhir:latest . && \
+  docker push jchao100/hapi-fhir:latest
+
 
